@@ -1,2 +1,2 @@
 # LeverXCars41
-SAP HANA Leverx Course
+SAP HANA XSA Leverx Course
