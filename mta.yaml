@@ -8,9 +8,21 @@ modules:
    path: web
    requires:
     - name: levcars41_uaa
-    
+ 
+ 
+ - name: core-db
+   type: hdb
+   path: core-db
+   requires:
+    - name: hdi-container
+
 resources:
  - name: levcars41_uaa
    parameters:
     config_path: ./xs-security.json
    type: com.sap.xs.uaa 
+
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
