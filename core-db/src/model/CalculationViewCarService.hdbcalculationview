@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="LeverXCars41.core_db.model::CalculationViewCarService" applyPrivilegeType="NONE" dataCategory="CUBE" dimensionType="" schemaVersion="3.0" defaultClient="$$client$$" visibility="reportingEnabled" outputViewType="Aggregation" calculationScenarioType="TREE_BASED" enforceSqlExecution="false">
+<descriptions defaultDescription="Calculation View of Car and Service"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="LeverXCars41.core_db.data::core_model.Car">
+    <resourceUri>LeverXCars41.core_db.data::core_model.Car</resourceUri>
+  </DataSource>
+  <DataSource id="LeverXCars41.core_db.data::core_model.Service">
+    <resourceUri>LeverXCars41.core_db.data::core_model.Service</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="CalculationViewCarService" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="CARID"><descriptions/>
+        <descriptions defaultDescription="CARID"/>
+      </viewAttribute>
+      <viewAttribute id="CUSTID"><descriptions/>
+        <descriptions defaultDescription="CUSTID"/>
+      </viewAttribute>
+      <viewAttribute id="DESCR"><descriptions/>
+        <descriptions defaultDescription="DESCR"/>
+      </viewAttribute>
+      <viewAttribute id="LICPLATE"><descriptions/>
+        <descriptions defaultDescription="LICPLATE"/>
+      </viewAttribute>
+      <viewAttribute id="MODEL"><descriptions/>
+        <descriptions defaultDescription="MODEL"/>
+      </viewAttribute>
+      <viewAttribute id="VIN"><descriptions/>
+        <descriptions defaultDescription="VIN"/>
+      </viewAttribute>
+      <viewAttribute id="AMOUNT"><descriptions/>
+        <descriptions defaultDescription="AMOUNT"/>
+      </viewAttribute>
+      <viewAttribute id="CURRENCY"><descriptions/>
+        <descriptions defaultDescription="CURRENCY"/>
+      </viewAttribute>
+      <viewAttribute id="DESCR_SERVICE"><descriptions/>
+        <descriptions defaultDescription="DESCR_1"/>
+      </viewAttribute>
+      <viewAttribute id="ENDDATE"><descriptions/>
+        <descriptions defaultDescription="ENDDATE"/>
+      </viewAttribute>
+      <viewAttribute id="SERVICEID"><descriptions/>
+        <descriptions defaultDescription="SERVICEID"/>
+      </viewAttribute>
+      <viewAttribute id="STARTDATE"><descriptions/>
+        <descriptions defaultDescription="STARTDATE"/>
+      </viewAttribute>
+      <viewAttribute id="ORIGINAL_AMOUNT"><descriptions/>
+        <descriptions defaultDescription="AMOUNT_1"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="LeverXCars41.core_db.data::core_model.Car">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARID" source="CARID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTID" source="CUSTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCR" source="DESCR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LICPLATE" source="LICPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODEL" source="MODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VIN" source="VIN"/>
+    </input>
+    <input node="LeverXCars41.core_db.data::core_model.Service">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AMOUNT" source="AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DESCR_SERVICE" source="DESCR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDATE" source="ENDDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERVICEID" source="SERVICEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STARTDATE" source="STARTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORIGINAL_AMOUNT" source="AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARID" source="CARID"/>
+    </input>
+    <joinAttribute name="CARID"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="CalculationViewCarService">
+  <attributes>
+    <attribute id="CARID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CARID"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="CARID"/>
+    </attribute>
+    <attribute id="CUSTID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTID"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="CUSTID"/>
+    </attribute>
+    <attribute id="DESCR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCR"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="DESCR"/>
+    </attribute>
+    <attribute id="LICPLATE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LICPLATE"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="LICPLATE"/>
+    </attribute>
+    <attribute id="MODEL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MODEL"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="MODEL"/>
+    </attribute>
+    <attribute id="VIN" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VIN"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="VIN"/>
+    </attribute>
+    <attribute id="CURRENCY" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENCY"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="CURRENCY"/>
+    </attribute>
+    <attribute id="DESCR_SERVICE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DESCR_SERVICE"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="DESCR_SERVICE"/>
+    </attribute>
+    <attribute id="SERVICEID" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERVICEID"/>
+      <keyMapping columnObjectName="CalculationViewCarService" columnName="SERVICEID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="AMOUNT" order="7" semanticType="amount" aggregationType="sum" measureType="amount">
+      <descriptions defaultDescription="AMOUNT"/>
+      <fixedCurrency>CURRENCY</fixedCurrency>
+      <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="false" convert="true">
+        <client>
+          <value>001</value>
+        </client>
+        <currencyConversionTables rates="LeverXCars41.core_db.data::Conversions.TCURR" configuration="LeverXCars41.core_db.data::Conversions.TCURV" prefactors="LeverXCars41.core_db.data::Conversions.TCURF" notations="LeverXCars41.core_db.data::Conversions.TCURN" precisions="LeverXCars41.core_db.data::Conversions.TCURX"/>
+        <sourceCurrency>
+          <value>CURRENCY</value>
+        </sourceCurrency>
+        <erpDecimalShift>true</erpDecimalShift>
+        <targetCurrency>
+          <value>USD</value>
+        </targetCurrency>
+        <referenceDate>
+          <value>20120102</value>
+        </referenceDate>
+        <exchangeRateType>1001</exchangeRateType>
+      </currencyConversion>
+      <measureMapping columnObjectName="CalculationViewCarService" columnName="AMOUNT"/>
+    </measure>
+    <measure id="ENDDATE" order="10" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="ENDDATE"/>
+      <measureMapping columnObjectName="CalculationViewCarService" columnName="ENDDATE"/>
+    </measure>
+    <measure id="STARTDATE" order="12" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="STARTDATE"/>
+      <measureMapping columnObjectName="CalculationViewCarService" columnName="STARTDATE"/>
+    </measure>
+    <measure id="ORIGINAL_AMOUNT" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ORIGINAL_AMOUNT"/>
+      <measureMapping columnObjectName="CalculationViewCarService" columnName="ORIGINAL_AMOUNT"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="CalculationViewCarService" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="217"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape modelObjectName="LeverXCars41.core_db.data::core_model.Car" modelObjectNameSpace="CalculationViewCarService" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="LeverXCars41.core_db.data::core_model.Service" modelObjectNameSpace="CalculationViewCarService" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
