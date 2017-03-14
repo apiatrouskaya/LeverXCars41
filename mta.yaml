@@ -9,13 +9,26 @@ modules:
    requires:
     - name: levcars41_uaa
  
- 
  - name: core-db
    type: hdb
    path: core-db
    requires:
     - name: hdi-container
-
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+    
+    - name: CrossContainerService
+      group: SERVICE_REPLACEMENTS
+      properties:
+        key: hdi-saperp-service
+        service: ~{saperp-service-name}  
+    
+    - name: CrossSchemaService
+      group: SERVICE_REPLACEMENTS
+      properties:
+        key: hdi-sflight-service
+        service: ~{sflight-service-name}
+    
 resources:
  - name: levcars41_uaa
    parameters:
@@ -26,3 +39,17 @@ resources:
    properties:
       hdi-container-name: ${service-name}
    type: com.sap.xs.hdi-container
+   
+ - name: CrossContainerService
+   type: org.cloudfoundry.existing-service
+   parameters:
+     service-name: SAPERP-3y1e18qwpvtwqq3w-SAPERP-hdi-container
+   properties:
+     saperp-service-name: ${service-name}
+     
+ - name: CrossSchemaService
+   type: org.cloudfoundry.existing-service
+   parameters: 
+     service-name: CROSS_SCHEMA_SFLIGHT_00
+   properties:
+     sflight-service-name: ${service-name}

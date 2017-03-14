@@ -1,0 +1,8 @@
+{
+  "LeverXCars41.core_db.synonyms::DUMMY": {
+    "target": {
+      "object": "DUMMY",
+      "schema": "SYS"
+    }
+  }
+}

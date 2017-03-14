@@ -1,4 +1,7 @@
 namespace LeverXCars41.core_db.data;
+using "LeverXCars41.core_db.synonyms::KNA1" as Customer;
+using "LeverXCars41.core_db.synonyms::DUMMY" as Dummy;
+
 context core_model {
 type CommonKey: String(20);
 type CarModel: String(10);
@@ -33,5 +36,11 @@ entity Service {
  CURRENCY: CurrencyT;
 } technical configuration {
    column store;
+};
+
+define view CustomerView as select from Customer{
+   CUSTID as "CustomerId",
+   NAME as "CustomerName",
+   ADDRESS as "CustomerAddress"
 };
 }
