@@ -1,0 +1,15 @@
+service {
+	"LeverXCars41.core_db.data::core_model.Car" as "Car" navigates ( "Services" as "CarService", "CarCustomer" as "CarCustomer")
+		create using "xsjs:carCreateMethod.xsjslib::carCreate";
+	
+	"LeverXCars41.core_db.data::core_model.Service" as "CarService";
+	"LeverXCars41.core_db.data::core_model.CustomerView" as "Customer" keys ("CustomerId");
+	
+	association "Services"
+		principal "Car"("CARID") multiplicity "1"
+		dependent "CarService"("CARID")	multiplicity "*";
+		
+	association "CarCustomer"
+		principal "Car"("CUSTID") multiplicity "1"
+		dependent "Customer"("CustomerId") multiplicity "1";
+}

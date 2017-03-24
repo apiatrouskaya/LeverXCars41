@@ -1,1 +1,17 @@
-{"type":"sap.hdb","builders":{"default":"hdi-builder","configs":{}},"runners":{"configs":{}},"attributes":{"mta_module_parent":["/LeverXCars41"],"sap.watt.common.setting":["{\"generation\":[{\"templateId\":\"hanatemplates.hanadbproject\",\"templateVersion\":\"1.0.0\",\"dateTimeStamp\":\"Tue, 07 Mar 2017 13:36:37 GMT\"}]}"]},"mixinTypes":["mtamodule"]}
+{
+	"type": "sap.hdb",
+	"builders": {
+		"default": "hdi-builder",
+		"configs": {}
+	},
+	"runners": {
+		"configs": {}
+	},
+	"attributes": {
+		"mta_module_parent": ["/LeverXCars41"],
+		"sap.watt.common.setting": [
+			"{\"generation\":[{\"templateId\":\"hanatemplates.hanadbproject\",\"templateVersion\":\"1.0.0\",\"dateTimeStamp\":\"Tue, 07 Mar 2017 13:36:37 GMT\"}]}"
+		]
+	},
+	"mixinTypes": ["mtamodule"]
+}
