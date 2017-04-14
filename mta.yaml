@@ -22,13 +22,7 @@ modules:
     - name: hdi-container
       properties:
         TARGET_CONTAINER: ~{hdi-container-name}
-    
-    - name: CrossSchemaService
-      group: SERVICE_REPLACEMENTS
-      properties:
-        key: hdi-sflight-service
-        service: ~{sflight-service-name}
-        
+  
     - name: CrossContainerService
       group: SERVICE_REPLACEMENTS
       properties:
@@ -59,16 +53,10 @@ resources:
       hdi-container-name: ${service-name}
    type: com.sap.xs.hdi-container
 
- - name: CrossSchemaService
-   type: org.cloudfoundry.existing-service
-   parameters:
-     service-name: CROSS_SCHEMA_SFLIGHT_00
-   properties:
-     sflight-service-name: ${service-name}
-     
+
  - name: CrossContainerService
    type: org.cloudfoundry.existing-service
    parameters:
-     service-name: SAPERP-3y1e18qwpvtwqq3w-SAPERP-hdi-container
+     service-name: SAPERP-w0z9b9th4vh30v5c-SAPERP-hdi-container
    properties:
      saperp-service-name: ${service-name}
